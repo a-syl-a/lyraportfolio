@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LJS - About Me</title>
+  <link rel="stylesheet" href="css/abtme.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+<body>
+
+        <header>
+          <a href = "home.html"><div class = "logo">LJ</div></a>
+          <nav id="nav-menu">
+            <a href="home.html">Home</a>
+            <div class="dropdown">
+            <a href="#" class="dropdown-toggle">Works</a>
+            <div class="dropdown-menu">
+              <a href="realism.html">Realisms</a>
+              <a href="web.html">Websites</a>
+              <a href="uiux.html">UI/UX</a>
+              <a href="pubmat.html">Pubmat</a>
+              <a href="ads.html">Ads</a>
+            </div>
+            <a href="abtme.html" class="active">About Me</a>
+            <a href="contact.html">Contact</a>
+          </nav>
+          <div class="actions">
+            <div class="search-container">
+              <input type="text" class="search" placeholder="Search...">
+              <i class="fas fa-search search-icon"></i>
+            </div>
+          </div>
+          <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </header>
+</div>
+    <section class="hero">
+      <h1>lyra jemella</h1>
+      <p>A journey through the intersection of design and development.</p>
+    </section>
+  </header>
+
+  <section class="qualities">
+    <div class="marquee">
+      <span>Websites • Arts • Illustrations • Graphic Design •</span> <span>Frontend • Merchandise • Publication Material • Social Media ADS • </span>
+    </div>
+  </section>
+
+  <section class="welcome-section">
+    <div class="text-content">
+      <h2>Who's Lyra Jemella?</h2>
+      <p> Her name is Lyra Jemella Salvacion, and a bachelor in Web Development with 5 years of experience in Graphic Designing. Her focus is frontend but she can also do backend coding. Her first choice in
+        her course was Entertaiment, and Multimedia Arts but she realize why not involve technology, since technology is practical and essential on this generation and integrating her design to a technology that keeps evolving makes her design stays relevant.
+      </p>
+
+    </div>
+    <div class="image-content">
+      <img src="img/me1.PNG" alt="Image 1" class="main-image" />
+      <img src="img/me2.jpg" alt="Image 2" class="overlay-image" />
+    </div>
+  </section>
+
+  <section class="about-approach">
+    <h3>Her Approach</h3>
+    <ul style="list-style: none; padding: 0; text-align: center;">
+      <li>&#8226; Designing with Purpose - Crafting designs that tell stories and engage users.</li><br>
+      <li>&#8226; Developing with Precision - Ensuring flawless functionality and user experience.</li> <br> 
+      <li>&#8226; Collaborating Effectively - Working closely with clients to achieve their goals.</li>
+    </ul>
+  </section>
+
+  
+  <section class="mission-vision-section">
+    <div class="box mission-box">
+      <h3>Her Mission</h3>
+      <p>To create visually striking designs and develop user-friendly websites that enhance user experiences and deliver results.</p>
+    </div>
+    <div class="box vision-box">
+      <h3>Her Vision</h3>
+      <p>To empower brands and individuals through creative and innovative digital solutions, making the online world more accessible and beautiful.</p>
+    </div>
+  </section>
+
+  <section class="subscribe">
+    <h2>Let's Connect!</h2>
+    <p>Send me a message, inquire, ask and learn.</p>
+    <input type="message" placeholder="message" />
+    <button>➜</button>
+  </section>
+
+  <section class="socials">
+    <h2>Follow Me</h2>
+    <div class="social-icons">
+      <a href="https://facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook"></i></a>
+      <a href="https://instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+      <a href="https://linkedin.com" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </section>
+
+
+  <script>
+
+const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('nav-menu');
+
+  hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+  });
+
+  // Dropdown click toggle
+const dropdownToggle = document.querySelector('.dropdown-toggle');
+const dropdownMenu = document.querySelector('.dropdown-menu');
+
+dropdownToggle.addEventListener('click', (e) => {
+  e.preventDefault();
+  dropdownMenu.classList.toggle('show');
+});
+
+// Close dropdown when clicking outside
+document.addEventListener('click', (e) => {
+  if (!dropdownToggle.contains(e.target) && !dropdownMenu.contains(e.target)) {
+    dropdownMenu.classList.remove('show');
+  }
+});
+
+// Mobile menu toggle
+const menuBtn = document.querySelector('.menu-btn');
+const navLinks = document.querySelector('.nav-links');
+
+menuBtn.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
+    document.addEventListener('DOMContentLoaded', function () {
+      const marquee = document.querySelector('.marquee');
+      let clonedMarquee = marquee.innerHTML;
+      marquee.innerHTML += clonedMarquee;
+
+      let speed = 0.5; // Adjust speed if needed
+
+      function animateMarquee() {
+        let scrollAmount = 0;
+
+        function step() {
+          scrollAmount -= speed;
+          if (scrollAmount <= -marquee.scrollWidth / 2) {
+            scrollAmount = 0;
+          }
+          marquee.style.transform = `translateX(${scrollAmount}px)`;
+          requestAnimationFrame(step);
+        }
+        step();
+      }
+
+      animateMarquee();
+    });
+  </script>
+</body>
+</html>
